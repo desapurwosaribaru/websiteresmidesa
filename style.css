@@ -1,0 +1,772 @@
+/* FONT SETUP */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background: #FFFFFF;
+    color: #333;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #8AA624;
+  color: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+header .logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+header .logo h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+header .logo p {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Navigation (Desktop) */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #8AA624;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #FFFFFF;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+  background-color: #FBA31C;
+  color: #FFFFFF;
+}
+
+/* Tombol Hamburger (Hidden di desktop) */
+.menu-toggle {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Tombol hamburger */
+  .menu-toggle {
+    display: block;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+  }
+
+  /* Menu navigasi mobile */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* sembunyi di luar layar */
+    width: 50%; /* penuh */
+    height: 100%;
+    background-color: rgba(251, 163, 28, 0.89); /* warna oranye dengan transparansi */
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding-top: 80px;
+}
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: transparent;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  nav ul li a:hover {
+    background-color: #FBA31C;
+    color: #fff;
+  }
+
+  /* Muncul saat toggle */
+  nav.show {
+    right: 0;
+  }
+}
+
+/* WELCOME SECTION */
+.welcome {
+  position: relative;
+  background: url('BG.svg') no-repeat center center/cover; /* ganti path gambar */
+  color: white;
+  padding: 100px 20px;
+  display: flex;
+  align-items: center;
+  min-height: 68vh;
+}
+
+.welcome-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.welcome-text {
+    animation: slideInLeft 1s ease-out forwards;
+    opacity: 0; /* hidden until animation completes */
+    line-height: 1.2;
+    flex: 1; 
+}
+
+.welcome-text h1 {
+    font-size: 36px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.welcome-text h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin: 5px 0 0;
+    letter-spacing: 0.3px;
+}
+
+.welcome-text h3 {
+    font-size: 13px;
+    color: #ffffff;
+    margin: 8px auto; /* atas-bawah 8px, kanan-kiri auto */
+    padding: 0px; /* kanan-kiri 20px */
+    text-align: justify;
+    max-width: 600px; /* biar kolom teks tidak terlalu lebar */
+    font-weight: normal; /* atau 400 */
+    letter-spacing: 0.3px;
+}
+
+.welcome-video iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    flex: 1; 
+}
+
+/* Animasi muncul dari kiri */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .welcome-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .welcome-text h1 {
+        font-size: 28px;
+    }
+    .welcome-text h2 {
+        font-size: 22px;
+    }
+}
+
+/* CONTENT SECTIONS */
+/* SEJARAH SINGKAT DESA */
+.sejarah-section {
+    padding: 5px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.sejarah-section h2 {
+    color: #ffffff;
+    background-color: #ea9100; /* ← warna baru */
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.sejarah-box-green {
+    background-color: #8AA624;
+    padding: 30px 40px;
+    border-radius: 36px;
+    margin: 10px auto 0;
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s ease-out forwards;
+
+    /* Membuat box melebar sesuai section (max 1200px agar tidak terlalu panjang) */
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Animasi muncul dari bawah */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sejarah-section {
+        padding: 40px 20px;
+    }
+
+    .sejarah-box-green {
+        padding: 20px;
+        font-size: 14px;
+    }
+}
+
+/* LOKASI DAN WILAYAH */
+.lokasi-section {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+.lokasi-section h2 {
+    color: #ffffff;
+    background-color: #ea9100; /* ← warna baru */
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.lokasi-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.lokasi-map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.lokasi-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.lokasi-info p {
+    margin-bottom: -10px; /* beri jarak dengan kompas */
+    text-align: justify;
+}
+
+.lokasi-box {
+  background-color: #8AA624;
+  padding: 20px 40px;
+  border-radius: 36px;
+  color: #ffffff;
+  line-height: 1.7;
+  font-size: 16px;
+  text-align: justify;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  
+  /* Animasi muncul dari kanan */
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideRight 1s ease-out forwards;
+}
+
+/* Animasi */
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lokasi-section h2 {
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Kompas Gambar */
+.kompas-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+}
+
+.kompas-icon {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+}
+
+.kompas-wrapper:hover .kompas-icon {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Tulisan arah */
+.arah {
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: 120px; /* opsional, bisa diperkecil */
+    line-height: 1.5; /* memperkecil spasi vertikal antar baris */
+    margin: 0; /* hilangkan jarak default antar elemen */
+}
+
+/* Posisi dengan jarak */
+.utara {
+    top: 40px; /* jarak dari atas ikon */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.timur {
+    top: 50%;
+    right: -60px; /* jarak dari kanan ikon */
+    transform: translateY(-50%);
+}
+.selatan {
+    bottom: 3px; /* jarak dari bawah ikon */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.barat {
+    top: 50%;
+    left: -50px; /* jarak dari kiri ikon */
+    transform: translateY(-50%);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .lokasi-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* KONDISI ALAM DAN IKLIM */
+.kondisi-section {
+    padding: 10px 5vw;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.kondisi-section h2 {
+    color: #ffffff;
+    background-color: #ea9100; /* ← warna baru */
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.kondisi-box {
+    background-color: #8AA624;
+    padding: 30px 40px;
+    border-radius: 36px;
+    margin: 10px auto 0;
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #ffffff;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s ease-out forwards;
+}
+
+/* Animasi muncul dari bawah */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .kondisi-box {
+        padding: 20px;
+        font-size: 14px;
+    }
+}
+
+/* DEMOGRAFI DAN MASYARAKAT */
+.demografi-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.demografi-section h2 {
+    color: #ffffff;
+    background-color: #ea9100; /* ← warna baru */
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Kotak counter */
+.demografi-counters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.counter-box {
+    background-color: #8AA624;
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 36px;
+    width: 150px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efek hover membesar */
+.counter-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-box .counter {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.counter-box p {
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+/* Kotak isi deskripsi */
+.demografi-box {
+  background-color: #8AA624;
+  padding: 30px 40px;
+  border-radius: 36px;
+  margin: 10 auto;
+  text-align: justify;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #ffffff;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+/* Animasi muncul dari bawah */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .counter-box {
+        width: 120px;
+        height: 100px;
+    }
+    .counter-box .counter {
+        font-size: 24px;
+    }
+}
+
+/* FASILITAS UMUM DESA */
+.fasilitas-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.fasilitas-section h2 {
+    color: #ffffff;
+    background-color: #ea9100; /* ← warna baru */
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.fasilitas-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.fasilitas-item {
+    background-color: #8AA624;
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    width: 220px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.fasilitas-item:hover {
+    transform: scale(1.05);
+}
+
+.fasilitas-item i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.fasilitas-item p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fasilitas-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: none; /* tetap hidden sampai diklik */
+    text-align: left;
+    font-size: 14px;
+}
+
+.fasilitas-list li {
+    margin-bottom: 6px;
+    background: rgba(74, 62, 62, 0.15);
+    padding: 8px 12px;
+    border-radius: 8px;
+    line-height: 1.5;
+    transition: background 0.3s ease;
+}
+
+.fasilitas-list li strong {
+    color: #fba31c;
+}
+
+.fasilitas-list li:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .fasilitas-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .fasilitas-item {
+        width: 80%;
+    }
+}
+
+/* GALERI */
+.galeri-section {
+    padding: 30px 40px; /* tambah padding kanan kiri agar melebar */
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.galeri-section h2 {
+    color: #ffffff;
+    background-color: #ea9100; /* ← warna baru */
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.galeri-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.galeri-track {
+    display: flex;
+    gap: 20px; /* jarak antar foto */
+    padding: 0 20px; /* jarak kiri kanan dalam track */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Desktop / default */
+.galeri-track img {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 280px;
+    border-radius: 10px;
+}
+
+/* Tombol navigasi */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(138, 166, 36, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(251, 163, 28, 0.8);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .galeri-section {
+        padding: 40px 10px;
+    }
+
+    /* Buat scroll horizontal di mobile */
+    .galeri-slider {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* smooth scroll di mobile */
+    }
+
+    .galeri-track {
+        gap: 10px;
+        padding: 0 10px;
+        flex-wrap: nowrap;
+        scroll-snap-type: x mandatory;
+    }
+
+    .galeri-track img {
+        width: 250px;
+        height: 160px;
+        scroll-snap-align: center;
+    }
+
+    /* Sembunyikan tombol navigasi di mobile */
+    .prev, .next {
+        display: none;
+    }
+}
+
+/* FOOTER */
+.footer-section {
+    background-color: #8AA624;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-section p {
+    margin: 8px 0;
+}
+
+.footer-social {
+    margin: 10px 0;
+}
+
+.footer-social a {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #FBA31C;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-section {
+        font-size: 13px;
+        padding: 15px;
+    }
+    .footer-social a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  header nav ul li a {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}

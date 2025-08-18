@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE RESMI DESA PURWOSARI BARU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Bank+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    #sejarah,
+    #lokasi,
+    #kondisi,
+    #demografi,
+    #fasilitas,
+    #galeri,
+    #kontak {
+      scroll-margin-top: 70px;
+    }
+  </style>
+
+    <style>
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h1>Desa Purwosari Baru</h1>
+    <p>Kecamatan Tamban, Kabupaten Barito Kuala, Kalimantan Selatan</p>
+  </div>
+
+  <!-- Tombol Hamburger -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="#welcome">Beranda</a></li>
+      <li><a href="#sejarah">Sejarah</a></li>
+      <li><a href="#lokasi">Lokasi</a></li>
+      <li><a href="#kondisi">Kondisi Alam</a></li>
+      <li><a href="#demografi">Demografi</a></li>
+      <li><a href="#fasilitas">Fasilitas</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#footer">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <!-- WELCOME PAGE -->
+   <section id="welcome" class="welcome">
+    <div class="welcome-container">
+        <div class="welcome-text animate-on-scroll">
+            <h1>Selamat Datang,</h1>
+            <h2>Di Desa Purwosari Baru</h2>
+            <h3>
+              Sebuah desa dengan kekayaan alam, budaya, dan kehidupan masyarakat yang harmonis
+            </h3>
+        </div>
+        <div class="welcome-video">
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/aKtb7Y3qOck?si=pmYm2TSX6e8pHtX1&amp;start=16" 
+            title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    </section>
+
+    <!-- SEJARAH SINGKAT DESA -->
+<section id="sejarah" class="sejarah-section">
+    <h2>Sejarah Singkat Desa</h2>
+    <div class="sejarah-box-green animate-on-scroll">
+        <p>
+            Desa Purwosari Baru terletak di Kecamatan Tamban, Kabupaten Barito Kuala, Kalimantan Selatan. 
+            Desa ini merupakan pemekaran dari Desa Purwosari I, dan pembentukan wilayah baru ini melalui 
+            musyawarah tokoh agama dan masyarakat, yaitu H. Kailan, Bapak Bakri, H. Salamun, 
+            Bapak Katijan, dan Bapak Wakidi. Dari hasil musyawarah tersebut, disepakati nama 
+            “Purwosari Baru” sebagai identitas desa yang mencerminkan kelanjutan dan harapan baru bagi masyarakatnya.
+        </p>
+        <p>
+            Desa ini telah berkembang menjadi wilayah dengan struktur pemerintahan yang stabil terbagi menjadi 4 RW dan 12 RT, 
+            dan dikenal dengan lingkungan alamnya yang subur. Berbagai komoditas pertanian seperti padi, kelapa, jeruk, 
+            dan karet tumbuh subur di wilayah ini, menjadikan Desa Purwosari Baru sebagai desa yang makmur secara agraris 
+            dan memiliki potensi ekonomi lokal yang kuat.
+        </p>
+    </div>
+</section>
+
+    <!-- LOKASI DAN WILAYAH -->
+    <section id="lokasi" class="lokasi-section">
+    <h2>Lokasi dan Wilayah</h2>
+    <div class="lokasi-container animate-on-scroll">
+        <!-- Peta di kiri -->
+        <div class="lokasi-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31863.926893844375!2d114.44803631655783!3d-3.3523747338232943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de41edd88b31171%3A0x512ae264bc10c41d!2sPurwosari%20Baru%2C%20Tamban%2C%20Barito%20Kuala%20Regency%2C%20South%20Kalimantan!5e0!3m2!1sen!2sid!4v1754550311762!5m2!1sen!2sid" 
+                width="100%" height="460" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+            </iframe>"
+        </div>
+
+        <!-- Info dan kompas di kanan -->
+        <div class="lokasi-info">
+        <div class="lokasi-box">
+            <p>
+                Desa Purwosari Baru berada di sebelah timur dari pusat Kecamatan Tamban, dengan jarak sekitar 2 km dari pusat kecamatan 
+                dan sekitar 60 km dari ibu kota Kabupaten Barito Kuala. Wilayah desa memiliki luas sekitar 850 ha, 
+                dengan lahan produktif sebesar 1.280 hektar yang terdiri atas sawah, perkebunan, dan permukiman.
+            </p>
+
+            <!-- Kompas -->
+        <div class="kompas-wrapper">
+  <img src="1.svg" alt="Kompas" class="kompas-icon">
+  <div class="arah utara">Desa Purwosari 1</div>
+  <div class="arah timur">Desa Tamban Sari Baru</div>
+  <div class="arah selatan">Desa Sungai Teras
+    (Kabupaten Tabunganen)</div>
+  <div class="arah barat">Desa Koanda</div>
+        </div>
+    </div>
+</section>
+
+    <!-- KONDISI ALAM DAN IKLIM -->
+   <section id="kondisi" class="kondisi-section">
+  <h2>Kondisi Alam dan Iklim</h2>
+  <div class="kondisi-box animate-on-scroll">
+    <p>
+      Desa ini memiliki topografi desa dataran rendah dengan ketinggian 1–3 meter di atas permukaan laut. 
+      Jenis tanahnya didominasi oleh tanah gambut dengan tingkat keasaman tinggi, yang cocok untuk pertanian pasang surut. 
+      Curah hujan rata-rata tahunan mencapai 2.665 mm, menjadikan desa ini termasuk dalam klim hujan tipe B, 
+      dengan suhu rata-rata 25–27°C.
+    </p>
+  </div>
+    </section>
+
+    <!-- DEMOGRAFI DAN MASYARAKAT -->
+    <section id="demografi" class="demografi-section">
+    <h2>Demografi dan Masyarakat</h2>
+
+    <!-- Kotak Angka -->
+     <div class="statistik-box">
+    <div class="demografi-counters animate-on-scroll">
+        <div class="counter-box">
+            <span class="counter" data-target="1198">0</span>
+            <p>Perempuan</p>
+        </div>
+        <div class="counter-box">
+            <span class="counter" data-target="2307">0</span>
+            <p>Jumlah Keseluruhan</p>
+        </div>
+        <div class="counter-box">
+            <span class="counter" data-target="742">0</span>
+            <p>Jumlah Kepala Keluarga</p>
+        </div>
+        <div class="counter-box">
+            <span class="counter" data-target="1109">0</span>
+            <p>Laki-laki</p>
+        </div>
+    </div>
+
+    <!-- Deskripsi -->
+     <div class="demografi-box animate-on-scroll">
+    <p>
+      Desa ini dihuni oleh keturunan masyarakat transmigrasi Jawa yang datang sejak masa kolonial, 
+      yang telah menyatu secara sosial dan budaya dengan masyarakat lokal (Banjar). 
+      Interaksi ini melahirkan bentuk kehidupan sosial yang harmonis dan akulturatif, 
+      di mana nilai-nilai budaya Jawa dan Banjar berpadu secara alamiah.
+    </p>
+    </div>
+</section>
+
+    <!-- FASILITAS UMUM DESA -->
+<section id="fasilitas" class="fasilitas-section">
+  <h2>Fasilitas Umum Desa</h2>
+  <div class="fasilitas-container animate-on-scroll">
+
+    <!-- Pendidikan -->
+    <div class="fasilitas-item" onclick="toggleList('pendidikan')">
+      <i class="fas fa-school"></i>
+      <p>Jenjang Pendidikan</p>
+      <ul id="pendidikan" class="fasilitas-list">
+        <li><strong>Taman Kanak-Kanak dan PAUD:</strong> 
+          </br>TK Budi Luhur dan TK Mawar Putih 1
+           </br>PAUD Gemilang
+        </li>
+        <li><strong>Madrasah Ibtidaiyah Negeri dan Swasta:</strong> 
+          </br>MDA Al-Mursyidul Ummah, MIS Hidayatussibyan, dan MDA Al-Huda</li>
+        <li><strong>Sekolah Dasar:</strong> 
+          </br>SD Negeri Purwosari Baru 1 dan SD Negeri Purwosari Baru 2</li>
+          <li><strong>Sekolah Menengah Pertama/ MTSs:</strong> 
+          </br>SLTPN 2 Tamban dan SLTPN 5 Tamban</li>
+        <li><strong>Sekolah Menengah Kejuruan:</strong> 
+          </br>SMK Negeri 3 Marabahan</li>
+      </ul>
+    </div>
+
+    <!-- Keagamaan Islam -->
+    <div class="fasilitas-item" onclick="toggleList('keagamaan')">
+      <i class="fas fa-mosque"></i>
+      <p>Fasilitas Keagamaan</p>
+      <ul id="keagamaan" class="fasilitas-list">
+        <li><strong>Mushalla:</strong> Miftahul Jannah, Nurul Hikmah, Jannatul Firdaus, Darul Falah, Nurul Hikmah, At Tarbiyah, dan Nurul Islam</li>
+        <li><strong>Masjid:</strong> Baitur Rahman, Al-Muhajirin, dan Al-Amin</li>
+      </ul>
+    </div>
+
+    <!-- Layanan Kesehatan -->
+    <div class="fasilitas-item" onclick="toggleList('kesehatan')">
+      <i class="fas fa-clinic-medical"></i>
+      <p>Layanan Kesehatan</p>
+      <ul id="kesehatan" class="fasilitas-list">
+        <li><strong>Posyandu:</strong> Mawar Putih</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+    <!-- GALERI -->
+  <section id="galeri" class="galeri-section">
+    <h2>Galeri Potensi Desa</h2>
+    <div class="galeri-slider">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="galeri-track">
+            <img src="PXL_20250817_090552735.jpg" alt="Foto 1">
+            <img src="IMG_2647~2.jpg" alt="Foto 2">
+            <img src="IMG-20250814-WA0015.jpg" alt="Foto 3">
+            <img src="IMG-20250814-WA0016.jpg" alt="Foto 4">
+            <img src="IMG-20250814-WA0017.jpg" alt="Foto 5">
+            <img src="IMG-20250814-WA0018.jpg" alt="Foto 6">
+            <img src="IMG-20250814-WA0019.jpg" alt="Foto 7">
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="footer-section">
+    <div class="footer-content">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/halo.purwosaribaru/?utm_source=ig_web_button_share_sheet" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <p><strong>Jam Operasional Kantor Desa:</strong><br>
+        Senin - Jumat: 08.00 - 16.00 WITA<br>
+        Sabtu - Minggu: Tutup</p>
+
+        <p>Desa Purwosari Baru, Kecamatan Tamban, Kabupaten Barito Kuala,<br>
+        Kalimantan Selatan</p>
+        
+        <p><em>Data Update Tahun 2025 l © KKN Kelompok 1 Komunikasi ULM 2025</em></p>
+    </div>
+</footer>
+    
+<!-- ==== JAVASCRIPT ==== -->
+<script>
+// Toggle list fasilitas
+function toggleList(id) {
+  const list = document.getElementById(id);
+  const allLists = document.querySelectorAll('.fasilitas-list');
+  allLists.forEach(el => {
+    if (el !== list) el.style.display = "none";
+  });
+  list.style.display = list.style.display === "block" ? "none" : "block";
+}
+
+// Slider galeri
+let slideIndex = 0;
+const track = document.querySelector('.galeri-track');
+const slides = document.querySelectorAll('.galeri-track img');
+const slideWidth = slides[0].clientWidth + 10;
+
+function moveSlide(direction) {
+  slideIndex += direction;
+  if (slideIndex < 0) slideIndex = 0;
+  if (slideIndex > slides.length - 3) slideIndex = slides.length - 3;
+  track.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+}
+
+// Animasi scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Navigation
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+const navLinks = document.querySelectorAll("#nav-menu ul li a");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+  });
+});
+
+// Counter
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = Math.ceil(target / speed);
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+});
+</script>
+
+<!-- SCRIPT UNTUK COUNTER -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // kecepatan animasi
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = Math.ceil(target / speed);
+
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  });
+});
+</script>
+</body>
+</html>
