@@ -656,26 +656,28 @@ nav ul li a:hover {
 @media (min-width: 769px) {
     .galeri-track {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-        gap: 10px;
-        padding: 0;               /* hapus padding berlebih */
-        justify-items: center;    /* gambar rata tengah */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+        gap: 20px;
+        justify-content: center;  /* grid rata tengah */
+        padding: 0;
+        max-width: 900px; /* batasi lebar maksimum galeri */
+        margin: 0 auto;   /* biar tetap di tengah halaman */
     }
 
     .galeri-track img {
-        width: 300px;   /* perkecil ukuran */
-        height: 200px;
+        width: 100%;      /* biar ikut lebar kolom */
+        max-width: 350px; /* batas ukuran gambar */
+        height: 220px;
         border-radius: 12px;
         object-fit: cover;
     }
 
-    /* Kalau jumlah foto ganjil, foto terakhir rata tengah */
+    /* Jika jumlah foto ganjil, terakhir tetap center */
     .galeri-track img:last-child:nth-last-child(2n+1) {
-        grid-column: 1 / -1;   /* bentang penuh */
-        justify-self: center; /* benar-benar di tengah */
+        grid-column: 1 / -1;
+        justify-self: center;
     }
 
-    /* Tombol navigasi disembunyikan di desktop */
     .prev, .next {
         display: none !important;
     }
@@ -759,6 +761,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
