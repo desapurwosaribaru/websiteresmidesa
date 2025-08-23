@@ -647,7 +647,7 @@ nav ul li a:hover {
 
 .galeri-slider {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* sembunyikan scroll bar default */
     width: 100%;
 }
 
@@ -665,7 +665,7 @@ nav ul li a:hover {
 /* Spacer biar foto terakhir tidak kepotong */
 .galeri-track::after {
     content: "";
-    flex: 0 0 20px; 
+    flex: 0 0 40px; /* lebih besar biar tombol tidak menimpa foto terakhir */
 }
 
 /* Default (desktop) */
@@ -673,7 +673,7 @@ nav ul li a:hover {
     flex: 0 0 auto;
     width: 400px;
     height: 280px;
-    border-radius: 10px;
+    border-radius: 12px;
     object-fit: cover; 
     scroll-snap-align: center;
 }
@@ -686,18 +686,41 @@ nav ul li a:hover {
     background-color: rgba(138, 166, 36, 0.8);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     border-radius: 50%;
-    font-size: 18px;
-    z-index: 2;
+    font-size: 20px;
+    z-index: 10; /* pastikan di atas gambar */
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 15px; }
+.next { right: 15px; }
 
 .prev:hover, .next:hover {
-    background-color: rgba(251, 163, 28, 0.8);
+    background-color: rgba(251, 163, 28, 0.9);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .galeri-section {
+        padding: 20px 10px;
+    }
+
+    .galeri-track {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .galeri-track img {
+        width: 260px;
+        height: 180px;
+        border-radius: 10px;
+    }
+
+    /* tombol disembunyikan di mobile */
+    .prev, .next {
+        display: none;
+    }
 }
 
 /* RESPONSIVE */
@@ -775,6 +798,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
