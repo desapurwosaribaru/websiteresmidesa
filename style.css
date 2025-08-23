@@ -637,7 +637,7 @@ nav ul li a:hover {
 
 .galeri-section h2 {
     color: #ffffff;
-    background-color: #ea9100; /* ← warna baru */
+    background-color: #ea9100; /* warna baru */
     display: inline-block;
     padding: 10px 26px;
     border-radius: 8px;
@@ -663,7 +663,9 @@ nav ul li a:hover {
     flex: 0 0 auto;
     width: 400px;
     height: 280px;
-    border-radius: 10px;
+    object-fit: cover;   /* biar gambar tidak ketarik */
+    border-radius: 10px; /* sudut melengkung */
+    max-width: 100%;     /* cegah gambar terlalu besar */
 }
 
 /* Tombol navigasi */
@@ -710,6 +712,8 @@ nav ul li a:hover {
     .galeri-track img {
         width: 250px;
         height: 160px;
+        object-fit: cover;   /* tetap rapi */
+        border-radius: 10px; /* sudut melengkung */
         scroll-snap-align: center;
     }
 
@@ -771,6 +775,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
