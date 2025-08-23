@@ -363,54 +363,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector(".galeri-slider");
   const track = document.querySelector(".galeri-track");
   const slides = document.querySelectorAll(".galeri-track img");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
 
   let index = 0;
-  const slideWidth = slides[0].offsetWidth + 20; // lebar foto + gap
+  const slideWidth = slides[0].offsetWidth + 20; // 20 = gap
   const totalSlides = slides.length;
 
-  let autoSlideInterval;
-  let autoSlideDelay;
-
-  function showSlide() {
+  function updateSlide() {
     track.style.transform = `translateX(${-index * slideWidth}px)`;
   }
 
-  function autoSlide() {
-    index++;
-    if (index >= totalSlides) {
-      index = 0; // balik ke awal
+  next.addEventListener("click", () => {
+    if (index < totalSlides - 1) {
+      index++;
+      updateSlide();
     }
-    showSlide();
-  }
-
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(autoSlide, 3000);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-    clearTimeout(autoSlideDelay);
-    autoSlideDelay = setTimeout(startAutoSlide, 5000); // mulai lagi setelah 5 detik
-  }
-
-  // Event listener untuk user scroll manual
-  slider.addEventListener("scroll", stopAutoSlide);
-
-  // Event listener tombol prev/next kalau ada
-  document.querySelectorAll(".prev, .next").forEach(btn => {
-    btn.addEventListener("click", stopAutoSlide);
   });
 
-  // Mulai pertama kali
-  startAutoSlide();
+  prev.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateSlide();
+    }
+  });
 });
 </script>
 </body>
 
 </html>
+
 
 
 
