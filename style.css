@@ -630,14 +630,14 @@ nav ul li a:hover {
 
 /* GALERI */
 .galeri-section {
-    padding: 30px 40px; /* tambah padding kanan kiri agar melebar */
+    padding: 30px 40px;
     background-color: #f4f4f4;
     text-align: center;
 }
 
 .galeri-section h2 {
     color: #ffffff;
-    background-color: #ea9100; /* warna baru */
+    background-color: #ea9100;
     display: inline-block;
     padding: 10px 26px;
     border-radius: 8px;
@@ -647,25 +647,33 @@ nav ul li a:hover {
 
 .galeri-slider {
     position: relative;
-    overflow: hidden;
+    overflow-x: auto;   /* aktifkan scroll horizontal */
+    overflow-y: hidden;
     width: 100%;
+    -webkit-overflow-scrolling: touch; /* smooth scroll di mobile */
+    scroll-snap-type: x mandatory;     /* snap agar rapi */
+
+    /* Sembunyikan scrollbar di desktop */
+    scrollbar-width: none;   /* Firefox */
+    -ms-overflow-style: none; /* IE & Edge lama */
+}
+.galeri-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
 }
 
 .galeri-track {
     display: flex;
-    gap: 20px; /* jarak antar foto */
-    padding: 0 20px; /* jarak kiri kanan dalam track */
-    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: nowrap; /* tetap horizontal */
 }
 
-/* Desktop / default */
 .galeri-track img {
     flex: 0 0 auto;
     width: 400px;
     height: 280px;
-    object-fit: cover;   /* biar gambar tidak ketarik */
-    border-radius: 10px; /* sudut melengkung */
-    max-width: 100%;     /* cegah gambar terlalu besar */
+    border-radius: 10px;
+    scroll-snap-align: center; /* foto berhenti di tengah */
 }
 
 /* Tombol navigasi */
@@ -696,25 +704,14 @@ nav ul li a:hover {
         padding: 40px 10px;
     }
 
-    /* Buat scroll horizontal di mobile */
-    .galeri-slider {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* smooth scroll di mobile */
-    }
-
     .galeri-track {
         gap: 10px;
         padding: 0 10px;
-        flex-wrap: nowrap;
-        scroll-snap-type: x mandatory;
     }
 
     .galeri-track img {
         width: 250px;
         height: 160px;
-        object-fit: cover;   /* tetap rapi */
-        border-radius: 10px; /* sudut melengkung */
-        scroll-snap-align: center;
     }
 
     /* Sembunyikan tombol navigasi di mobile */
@@ -775,6 +772,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
