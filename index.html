@@ -360,73 +360,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".galeri-track");
-  const slides = document.querySelectorAll(".galeri-track img");
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
-
-  let index = 0;
-  const slideWidth = slides[0].offsetWidth + 20; // 20 = gap
-  const totalSlides = slides.length;
-
-  function updateSlide() {
-    track.style.transform = `translateX(${-index * slideWidth}px)`;
-  }
-
-  next.addEventListener("click", () => {
-    if (index < totalSlides - 1) {
-      index++;
-      updateSlide();
-    }
-  });
-
-  prev.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
-      updateSlide();
-    }
-  });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".galeri-track");
-  const slides = document.querySelectorAll(".galeri-track img");
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
-
-  let index = 0;
-  const slideWidth = slides[0].offsetWidth + 20; // 20px = gap
-  const totalSlides = slides.length;
-
-  function updateSlide() {
-    track.style.transform = `translateX(${-index * slideWidth}px)`;
-  }
-
-  // Geser kanan
-  next.addEventListener("click", () => {
-    if (index < totalSlides - 1) {
-      index++;
-      updateSlide();
-    }
-  });
-
-  // Geser kiri
-  prev.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
-      updateSlide();
-    }
-  });
-});
-</script>
 </body>
 
 </html>
+
 
 
 
