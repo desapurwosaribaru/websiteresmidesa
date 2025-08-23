@@ -652,38 +652,39 @@ nav ul li a:hover {
 }
 
 /* ========================= */
+/* ========================= */
 /* DESKTOP (≥ 769px) */
 @media (min-width: 769px) {
     .galeri-track {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* baris pertama 3 foto */
+        display: grid !important;            /* pakai grid */
+        grid-template-columns: repeat(3, 1fr); /* baris pertama max 3 foto */
         gap: 20px;
         justify-items: center;
         padding: 0;
-        max-width: 1100px; /* batasi lebar */
+        max-width: 1100px;
         margin: 0 auto;
+
+        /* matikan efek slider */
+        overflow-x: unset !important;
+        scroll-snap-type: none !important;
     }
 
     .galeri-track img {
         width: 100%;
-        max-width: 320px;
+        max-width: 300px;
         height: 200px;
         border-radius: 12px;
         object-fit: cover;
     }
 
-    /* Jika jumlah foto ganjil → baris kedua isi 2 foto saja dan tetap center */
-    .galeri-track img:nth-last-child(2):first-child,
+    /* Jika jumlah foto ganjil, baris terakhir (2 foto) tetap center */
+    .galeri-track img:nth-last-child(2):nth-child(odd),
     .galeri-track img:last-child {
-        grid-column: span 1; /* biar masing-masing foto cuma 1 kolom */
+        grid-column: span 1;
+        justify-self: center;
     }
 
-    .galeri-track img:nth-last-child(2),
-    .galeri-track img:last-child {
-        justify-self: center; /* biar posisinya rata tengah */
-    }
-
-    /* Tombol navigasi disembunyikan di desktop */
+    /* sembunyikan tombol di desktop */
     .prev, .next {
         display: none !important;
     }
@@ -767,6 +768,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
