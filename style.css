@@ -628,6 +628,7 @@ nav ul li a:hover {
     }
 }
 
+/* ========================= */
 /* GALERI */
 .galeri-section {
     padding: 30px 40px; 
@@ -667,9 +668,9 @@ nav ul li a:hover {
         object-fit: cover;
     }
 
-    /* Sembunyikan tombol di desktop karena sudah grid */
+    /* Tombol disembunyikan di desktop */
     .prev, .next {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -694,7 +695,6 @@ nav ul li a:hover {
         scroll-snap-align: center;
     }
 
-    /* Tombol disembunyikan di mobile */
     .prev, .next {
         display: none;
     }
@@ -752,6 +752,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
