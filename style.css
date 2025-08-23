@@ -647,8 +647,10 @@ nav ul li a:hover {
 
 .galeri-slider {
     position: relative;
-    overflow: hidden;
+    overflow-x: auto; /* ubah dari hidden ke auto */
+    overflow-y: hidden; /* hanya horizontal */
     width: 100%;
+    -webkit-overflow-scrolling: touch; /* smooth scroll di mobile */
 }
 
 .galeri-track {
@@ -769,4 +771,5 @@ nav ul li a:hover {
     font-size: 12px;
     padding: 5px 10px;
   }
+
 }
