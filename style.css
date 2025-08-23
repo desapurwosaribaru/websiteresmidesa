@@ -663,9 +663,15 @@ nav ul li a:hover {
 
 .galeri-track {
     display: flex;
-    gap: 20px;
-    padding: 0 20px;
-    flex-wrap: nowrap; /* tetap horizontal */
+    gap: 20px; /* jarak antar foto */
+    padding: 0 20px; /* jarak kiri kanan dalam track */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Tambahkan spacer agar foto terakhir tidak terpotong */
+.galeri-track::after {
+    content: "";
+    flex: 0 0 20px; /* ukuran sama dengan gap */
 }
 
 .galeri-track img {
@@ -772,6 +778,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
