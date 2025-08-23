@@ -628,17 +628,16 @@ nav ul li a:hover {
     }
 }
 
-/* ========================= */
 /* GALERI */
 .galeri-section {
-    padding: 30px 40px; 
+    padding: 30px 20px;
     background-color: #f4f4f4;
     text-align: center;
 }
 
 .galeri-section h2 {
     color: #ffffff;
-    background-color: #ea9100; 
+    background-color: #ea9100;
     display: inline-block;
     padding: 10px 26px;
     border-radius: 8px;
@@ -648,51 +647,32 @@ nav ul li a:hover {
 
 .galeri-slider {
     position: relative;
+    overflow-x: auto;          /* scroll horizontal */
+    overflow-y: hidden;
     width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* ========================= */
-@media (min-width: 769px) {
-  .galeri-track {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 kolom */
-      gap: 20px;
-      padding: 0 20px;
-      justify-content: center; /* isi grid rata tengah */
-  }
-
-  .galeri-track img {
-      width: 280px;   /* ukuran gambar */
-      height: 180px;
-      border-radius: 12px;
-      object-fit: cover;
-  }
+.galeri-track {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
 }
 
-/* ========================= */
-/* MOBILE (≤ 768px) = scroll horizontal */
-@media (max-width: 768px) {
-    .galeri-track {
-        display: flex;
-        gap: 10px;
-        padding: 0 10px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-    }
+.galeri-track img {
+    flex: 0 0 auto;
+    width: 300px;              /* samakan ukuran dengan mobile, bisa disesuaikan */
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    scroll-snap-align: center;
+}
 
-    .galeri-track img {
-        flex: 0 0 auto;
-        width: 260px;
-        height: 180px;
-        border-radius: 10px;
-        scroll-snap-align: center;
-    }
-
-    .prev, .next {
-        display: none;
-    }
+/* Tombol navigasi disembunyikan */
+.prev, .next {
+    display: none !important;
 }
 
 /* FOOTER */
@@ -747,6 +727,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
