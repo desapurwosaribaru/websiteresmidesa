@@ -630,14 +630,14 @@ nav ul li a:hover {
 
 /* GALERI */
 .galeri-section {
-    padding: 30px 20px;
+    padding: 30px 40px; /* tambah padding kanan kiri agar melebar */
     background-color: #f4f4f4;
     text-align: center;
 }
 
 .galeri-section h2 {
     color: #ffffff;
-    background-color: #ea9100;
+    background-color: #ea9100; /* ← warna baru */
     display: inline-block;
     padding: 10px 26px;
     border-radius: 8px;
@@ -647,32 +647,54 @@ nav ul li a:hover {
 
 .galeri-slider {
     position: relative;
-    overflow-x: auto;          /* scroll horizontal */
-    overflow-y: hidden;
+    overflow: hidden;
     width: 100%;
-    -webkit-overflow-scrolling: touch;
 }
 
 .galeri-track {
     display: flex;
-    gap: 20px;
-    padding: 0 20px;
-    flex-wrap: nowrap;
-    scroll-snap-type: x mandatory;
+    gap: 20px; /* jarak antar foto */
+    padding: 0 20px; /* jarak kiri kanan dalam track */
+    transition: transform 0.5s ease-in-out;
 }
 
+/* Desktop / default */
 .galeri-track img {
     flex: 0 0 auto;
-    width: 300px;              /* samakan ukuran dengan mobile, bisa disesuaikan */
-    height: 200px;
-    border-radius: 12px;
-    object-fit: cover;
-    scroll-snap-align: center;
+    width: 400px;
+    height: 280px;
+    border-radius: 10px;
 }
 
-/* Tombol navigasi disembunyikan */
-.prev, .next {
-    display: none !important;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .galeri-section {
+        padding: 40px 10px;
+    }
+
+    /* Buat scroll horizontal di mobile */
+    .galeri-slider {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* smooth scroll di mobile */
+    }
+
+    .galeri-track {
+        gap: 10px;
+        padding: 0 10px;
+        flex-wrap: nowrap;
+        scroll-snap-type: x mandatory;
+    }
+
+    .galeri-track img {
+        width: 250px;
+        height: 160px;
+        scroll-snap-align: center;
+    }
+
+    /* Sembunyikan tombol navigasi di mobile */
+    .prev, .next {
+        display: none;
+    }
 }
 
 /* FOOTER */
@@ -727,6 +749,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
