@@ -651,11 +651,13 @@ nav ul li a:hover {
     width: 100%;
 }
 
-.galeri-track {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
+.galeri-track img {
+    flex: 0 0 auto;
+    width: 400px;       /* atur lebar default */
+    height: 280px;      /* atur tinggi default */
+    object-fit: cover;  /* supaya gambar rapi */
+    border-radius: 10px; /* bikin sudut melengkung */
+    max-width: 100%;    /* biar nggak melebihi container */
 }
 
 .prev, .next {
@@ -753,5 +755,6 @@ nav ul li a:hover {
   }
 
 }
+
 
 
