@@ -657,6 +657,7 @@ nav ul li a:hover {
     scrollbar-width: none;   /* Firefox */
     -ms-overflow-style: none; /* IE & Edge lama */
 }
+
 .galeri-slider::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
@@ -666,20 +667,33 @@ nav ul li a:hover {
     gap: 20px; /* jarak antar foto */
     padding: 0 20px; /* jarak kiri kanan dalam track */
     transition: transform 0.5s ease-in-out;
+    scroll-snap-type: x mandatory; /* snap scrolling */
+    overflow-x: auto; /* biar bisa scroll */
+    -webkit-overflow-scrolling: touch; /* smooth di iOS */
 }
 
 /* Tambahkan spacer agar foto terakhir tidak terpotong */
 .galeri-track::after {
     content: "";
-    flex: 0 0 20px; /* ukuran sama dengan gap */
+    flex: 0 0 20px; /* spacer sesuai gap */
 }
 
+/* Desktop / default */
 .galeri-track img {
     flex: 0 0 auto;
     width: 400px;
     height: 280px;
     border-radius: 10px;
-    scroll-snap-align: center; /* foto berhenti di tengah */
+    object-fit: cover; /* biar gambar tetap proporsional */
+    scroll-snap-align: center; /* foto berhenti rapi */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .galeri-track img {
+        width: 250px;
+        height: 160px;
+    }
 }
 
 /* Tombol navigasi */
@@ -778,6 +792,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
