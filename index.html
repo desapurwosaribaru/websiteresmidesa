@@ -360,8 +360,57 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".galeri-slider");
+  const track = document.querySelector(".galeri-track");
+  const slides = document.querySelectorAll(".galeri-track img");
+
+  let index = 0;
+  const slideWidth = slides[0].offsetWidth + 20; // lebar foto + gap
+  const totalSlides = slides.length;
+
+  let autoSlideInterval;
+  let autoSlideDelay;
+
+  function showSlide() {
+    track.style.transform = `translateX(${-index * slideWidth}px)`;
+  }
+
+  function autoSlide() {
+    index++;
+    if (index >= totalSlides) {
+      index = 0; // balik ke awal
+    }
+    showSlide();
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(autoSlide, 3000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+    clearTimeout(autoSlideDelay);
+    autoSlideDelay = setTimeout(startAutoSlide, 5000); // mulai lagi setelah 5 detik
+  }
+
+  // Event listener untuk user scroll manual
+  slider.addEventListener("scroll", stopAutoSlide);
+
+  // Event listener tombol prev/next kalau ada
+  document.querySelectorAll(".prev, .next").forEach(btn => {
+    btn.addEventListener("click", stopAutoSlide);
+  });
+
+  // Mulai pertama kali
+  startAutoSlide();
+});
+</script>
 </body>
 
 </html>
+
 
 
