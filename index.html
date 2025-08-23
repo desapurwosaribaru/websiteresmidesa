@@ -391,9 +391,69 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".galeri-track");
+  const slides = document.querySelectorAll(".galeri-track img");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+
+  let index = 0;
+  const slideWidth = slides[0].offsetWidth + 20; // 20px = jarak (gap)
+  const totalSlides = slides.length;
+
+  function updateSlide() {
+    track.style.transform = `translateX(${-index * slideWidth}px)`;
+  }
+
+  // Geser kanan
+  next.addEventListener("click", () => {
+    if (index < totalSlides - 1) {
+      index++;
+      updateSlide();
+    }
+  });
+
+  // Geser kiri
+  prev.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateSlide();
+    }
+  });
+
+  // === Swipe di mobile ===
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener("touchend", (e) => {
+    endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+      // swipe kiri → geser kanan
+      if (index < totalSlides - 1) {
+        index++;
+        updateSlide();
+      }
+    } else if (endX - startX > 50) {
+      // swipe kanan → geser kiri
+      if (index > 0) {
+        index--;
+        updateSlide();
+      }
+    }
+  });
+});
+</script>   
 </body>
 
 </html>
+
 
 
 
