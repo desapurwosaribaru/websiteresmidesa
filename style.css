@@ -657,7 +657,7 @@ nav ul li a:hover {
     .galeri-track {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-        gap: 20px;
+        gap: 10px;
         padding: 0;               /* hapus padding berlebih */
         justify-items: center;    /* gambar rata tengah */
     }
@@ -759,6 +759,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
