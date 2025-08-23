@@ -647,36 +647,17 @@ nav ul li a:hover {
 
 .galeri-slider {
     position: relative;
-    overflow-x: auto;   /* aktifkan scroll horizontal */
-    overflow-y: hidden;
+    overflow: hidden; /* supaya tombol di atas, tidak ikut scroll konten */
     width: 100%;
-    -webkit-overflow-scrolling: touch; /* smooth scroll di mobile */
-    scroll-snap-type: x mandatory;     /* snap agar rapi */
-
-    /* Sembunyikan scrollbar di desktop */
-    scrollbar-width: none;   /* Firefox */
-    -ms-overflow-style: none; /* IE & Edge lama */
-}
-.galeri-slider::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
 }
 
 .galeri-track {
     display: flex;
     gap: 20px;
-    padding: 0 20px;
-    flex-wrap: nowrap; /* tetap horizontal */
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
-.galeri-track img {
-    flex: 0 0 auto;
-    width: 400px;
-    height: 280px;
-    border-radius: 10px;
-    scroll-snap-align: center; /* foto berhenti di tengah */
-}
-
-/* Tombol navigasi */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -688,7 +669,7 @@ nav ul li a:hover {
     cursor: pointer;
     border-radius: 50%;
     font-size: 18px;
-    z-index: 1;
+    z-index: 2; /* lebih tinggi dari foto */
 }
 
 .prev { left: 10px; }
@@ -772,4 +753,5 @@ nav ul li a:hover {
   }
 
 }
+
 
