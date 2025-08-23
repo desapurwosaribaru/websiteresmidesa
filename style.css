@@ -669,6 +669,12 @@ nav ul li a:hover {
         object-fit: cover; /* biar proporsional */
     }
 
+    /* Jika jumlah foto ganjil, foto terakhir ditaruh di tengah */
+.galeri-track img:last-child:nth-child(odd) {
+    grid-column: 1 / -1;      /* bentang dari kolom pertama sampai terakhir */
+    justify-self: center;     /* posisi benar-benar di tengah */
+}
+
     /* Tombol navigasi disembunyikan di desktop */
     .prev, .next {
         display: none !important;
@@ -753,6 +759,7 @@ nav ul li a:hover {
   }
 
 }
+
 
 
 
