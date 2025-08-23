@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const next = document.querySelector(".next");
 
   let index = 0;
-  const slideWidth = slides[0].offsetWidth + 20; // 20px = jarak (gap)
+  const slideWidth = slides[0].offsetWidth + 20; // 20px = gap
   const totalSlides = slides.length;
 
   function updateSlide() {
@@ -422,34 +422,8 @@ document.addEventListener("DOMContentLoaded", function () {
       updateSlide();
     }
   });
-
-  // === Swipe di mobile ===
-  let startX = 0;
-  let endX = 0;
-
-  track.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  track.addEventListener("touchend", (e) => {
-    endX = e.changedTouches[0].clientX;
-
-    if (startX - endX > 50) {
-      // swipe kiri → geser kanan
-      if (index < totalSlides - 1) {
-        index++;
-        updateSlide();
-      }
-    } else if (endX - startX > 50) {
-      // swipe kanan → geser kiri
-      if (index > 0) {
-        index--;
-        updateSlide();
-      }
-    }
-  });
 });
-</script>   
+</script>
 </body>
 
 </html>
