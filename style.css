@@ -706,6 +706,8 @@ nav ul li a:hover {
     font-size: 24px;
     margin: 0 5px;
     transition: color 0.3s ease;
+    text-decoration: none; /* ← hapus garis strip bawah */
+    display: inline-block; /* biar rapih */
 }
 
 .footer-social a:hover {
@@ -734,30 +736,4 @@ nav ul li a:hover {
     font-size: 12px;
     padding: 5px 10px;
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
