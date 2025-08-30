@@ -706,8 +706,9 @@ nav ul li a:hover {
     font-size: 24px;
     margin: 0 5px;
     transition: color 0.3s ease;
-    text-decoration: none; /* ← hapus garis strip bawah */
-    display: inline-block; /* biar rapih */
+    text-decoration: none !important; /* hilangkan garis */
+    display: inline-flex;             /* rapat ke icon */
+    align-items: center;
 }
 
 .footer-social a:hover {
@@ -737,3 +738,4 @@ nav ul li a:hover {
     padding: 5px 10px;
   }
 }
+
